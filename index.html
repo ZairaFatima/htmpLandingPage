@@ -74,21 +74,23 @@
       }
 
       .brand-mark {
-        width: 32px;
-        height: 32px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
-        position: relative;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
+        background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(56, 189, 248, 0.2));
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
       }
 
-      .brand-mark::before {
-        content: "";
-        position: absolute;
-        inset: 8px;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.28);
+      .brand-mark img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .nav-links {
@@ -331,6 +333,74 @@
         gap: 22px;
       }
 
+      .info-section {
+        padding: 20px 0 0;
+      }
+
+      .info-grid,
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 28px;
+      }
+
+      .info-panel,
+      .price-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 26px 22px;
+        box-shadow: 0 8px 28px rgba(2, 8, 23, 0.25);
+      }
+
+      .info-panel h3,
+      .price-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .info-panel p,
+      .price-card p,
+      .price-card li {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .price-card {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .price-card.featured {
+        background: linear-gradient(180deg, rgba(124, 58, 237, 0.18), rgba(15, 23, 42, 0.8));
+        border-color: rgba(124, 58, 237, 0.4);
+      }
+
+      .price-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .price {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+      }
+
+      .price small {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .price-card ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
       .feature-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -401,6 +471,8 @@
 
         .hero-grid,
         .feature-grid,
+        .info-grid,
+        .pricing-grid,
         .cta-box {
           grid-template-columns: 1fr;
           display: grid;
@@ -563,7 +635,88 @@
         </div>
       </section>
 
-      <section class="cta-panel">
+      <section class="info-section" id="solutions">
+        <div class="container">
+          <div class="section-head">
+            <h2>Why teams choose Nova</h2>
+            <p>
+              From positioning to product execution, every touchpoint is designed to create clarity and momentum.
+            </p>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-panel">
+              <h3>Strategy-first planning</h3>
+              <p>We map your offer, audience, and positioning so every campaign is built around the right opportunity.</p>
+            </article>
+
+            <article class="info-panel">
+              <h3>Conversion-focused design</h3>
+              <p>Smart UX patterns help visitors understand your value quickly and turn interest into action.</p>
+            </article>
+
+            <article class="info-panel">
+              <h3>Data-backed execution</h3>
+              <p>We keep performance transparent with measurable insights that inform smarter decisions over time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="pricing">
+        <div class="container">
+          <div class="section-head">
+            <h2>Simple pricing</h2>
+            <p>Choose the support level that matches your pace and ambition.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <div class="price-header">
+                <h3>Starter</h3>
+                <span class="chip">For early products</span>
+              </div>
+              <div class="price">$39 <small>/mo</small></div>
+              <p>Perfect for early-stage teams validating new ideas.</p>
+              <ul>
+                <li>Landing page design</li>
+                <li>Basic analytics</li>
+                <li>Email support</li>
+              </ul>
+            </article>
+
+            <article class="price-card featured">
+              <div class="price-header">
+                <h3>Growth</h3>
+                <span class="chip">Most popular</span>
+              </div>
+              <div class="price">$89 <small>/mo</small></div>
+              <p>Built for teams that want scalable execution and performance insights.</p>
+              <ul>
+                <li>Advanced UX system</li>
+                <li>Conversion optimization</li>
+                <li>Priority support</li>
+              </ul>
+            </article>
+
+            <article class="price-card">
+              <div class="price-header">
+                <h3>Scale</h3>
+                <span class="chip">For mature brands</span>
+              </div>
+              <div class="price">$149 <small>/mo</small></div>
+              <p>For businesses ready to elevate strategy, experimentation, and growth.</p>
+              <ul>
+                <li>Custom roadmap</li>
+                <li>Dedicated consultant</li>
+                <li>Quarterly reviews</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-panel" id="about">
         <div class="container">
           <div class="cta-box">
             <div>

@@ -15,3 +15,4 @@ The page is designed to showcase a business offering sleek visuals, bold typogra
 ## Files
 - `index.html` — main page structure and styling
 - `nova head.png` — branding asset used in the logo area
+![project screenshot](./nova%20head.png)
